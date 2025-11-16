@@ -1,0 +1,143 @@
+.contact-section {
+  padding: 6rem 0;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+
+  .contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: center;
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        svg {
+          color: var(--text-light);
+
+          :host-context(body.dark) & {
+            color: var(--text-dark);
+          }
+        }
+
+        .contact-link {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: var(--text-light);
+          text-decoration: none;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: var(--accent-light);
+          }
+
+          :host-context(body.dark) & {
+            color: var(--text-dark);
+
+            &:hover {
+              color: var(--accent-dark);
+            }
+          }
+        }
+      }
+    }
+
+    .contact-copy {
+      font-size: 1rem;
+      color: #666;
+      text-align: center;
+      margin: 1rem 0;
+
+      :host-context(body.dark) & {
+        color: #a1a1aa;
+      }
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0.75rem;
+
+      .social-link {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        color: var(--text-light);
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: var(--card-light);
+          transform: translateY(-2px);
+        }
+
+        :host-context(body.dark) & {
+          border-color: var(--border-dark);
+          color: var(--text-dark);
+
+          &:hover {
+            background: var(--card-dark);
+          }
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 968px) {
+    padding: 4rem 0;
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .contact-content .contact-info .contact-item .contact-link {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.25rem;
+    }
+
+    .contact-content .contact-info .contact-item {
+      flex-direction: column;
+      text-align: center;
+
+      .contact-link {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}

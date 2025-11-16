@@ -1,0 +1,216 @@
+{
+  "personalInfo": {
+    "name": "John Doe",
+    "title": "Full Stack Developer",
+    "email": "john.doe@example.com",
+    "phone": "+1 (555) 123-4567",
+    "location": "San Francisco, CA",
+    "linkedin": "https://linkedin.com/in/johndoe",
+    "github": "https://github.com/johndoe",
+    "website": "https://johndoe.dev",
+    "summary": "Passionate Full Stack Developer with 5+ years of experience building scalable web applications. Specialized in Angular, React, Node.js, and cloud technologies. Strong problem-solver with a track record of delivering high-quality solutions.",
+    "avatar": "https://ui-avatars.com/api/?name=John+Doe&size=200&background=667eea&color=fff&bold=true"
+  },
+  "experiences": [
+    {
+      "id": "exp1",
+      "company": "Tech Corp",
+      "position": "Senior Full Stack Developer",
+      "location": "San Francisco, CA",
+      "startDate": "2022-01",
+      "endDate": "Present",
+      "current": true,
+      "responsibilities": [
+        "Lead development of enterprise web applications using Angular and Node.js",
+        "Architect and implement microservices architecture",
+        "Mentor junior developers and conduct code reviews",
+        "Collaborate with product team to define technical requirements"
+      ],
+      "technologies": ["Angular", "Node.js", "TypeScript", "MongoDB", "AWS"]
+    },
+    {
+      "id": "exp2",
+      "company": "Digital Solutions Inc",
+      "position": "Full Stack Developer",
+      "location": "San Francisco, CA",
+      "startDate": "2020-03",
+      "endDate": "2021-12",
+      "current": false,
+      "responsibilities": [
+        "Developed responsive web applications using React and Express",
+        "Implemented RESTful APIs and integrated third-party services",
+        "Optimized application performance and reduced load times by 40%",
+        "Participated in agile development processes"
+      ],
+      "technologies": ["React", "Express", "PostgreSQL", "Docker", "Redis"]
+    },
+    {
+      "id": "exp3",
+      "company": "StartupXYZ",
+      "position": "Junior Developer",
+      "location": "San Francisco, CA",
+      "startDate": "2019-06",
+      "endDate": "2020-02",
+      "current": false,
+      "responsibilities": [
+        "Built front-end features using Vue.js and Bootstrap",
+        "Maintained and enhanced existing codebase",
+        "Collaborated with design team to implement UI/UX improvements",
+        "Fixed bugs and implemented feature requests"
+      ],
+      "technologies": ["Vue.js", "JavaScript", "Bootstrap", "MySQL"]
+    }
+  ],
+  "education": [
+    {
+      "id": "edu1",
+      "institution": "University of California",
+      "degree": "Bachelor of Science",
+      "field": "Computer Science",
+      "location": "Berkeley, CA",
+      "startDate": "2015-09",
+      "endDate": "2019-05",
+      "gpa": "3.8",
+      "achievements": [
+        "Dean's List all semesters",
+        "Graduated with Honors",
+        "President of Computer Science Club"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": ["Angular", "React", "Vue.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "SCSS", "Tailwind CSS", "Bootstrap"]
+    },
+    {
+      "category": "Backend",
+      "items": ["Node.js", "Express", "NestJS", "Python", "Django", "RESTful APIs", "GraphQL"]
+    },
+    {
+      "category": "Database",
+      "items": ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase"]
+    },
+    {
+      "category": "DevOps & Tools",
+      "items": ["Git", "Docker", "AWS", "CI/CD", "Jenkins", "Kubernetes", "Linux"]
+    },
+    {
+      "category": "Other",
+      "items": ["Agile/Scrum", "Unit Testing", "Jest", "Jasmine", "Problem Solving", "Team Leadership"]
+    }
+  ],
+  "productionProjects": [
+    {
+      "id": "prod1",
+      "name": "Enterprise CRM System",
+      "description": "A comprehensive customer relationship management system for large enterprises with advanced analytics, lead tracking, and sales pipeline management.",
+      "technologies": ["Angular", "Node.js", "PostgreSQL", "Redis", "AWS"],
+      "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "prod2",
+      "name": "Healthcare Management Portal",
+      "description": "HIPAA-compliant healthcare management platform with patient records, appointment scheduling, and telemedicine capabilities.",
+      "technologies": ["React", "Express", "MongoDB", "Socket.io", "Azure"],
+      "imageUrl": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "prod3",
+      "name": "Financial Trading Platform",
+      "description": "Real-time stock trading platform with live market data, portfolio management, and advanced charting tools for institutional investors.",
+      "technologies": ["Next.js", "NestJS", "TimescaleDB", "WebSocket", "Docker"],
+      "imageUrl": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop"
+    },
+    {
+      "id": "prod4",
+      "name": "E-Learning Management System",
+      "description": "Comprehensive learning management system with video streaming, interactive quizzes, progress tracking, and certification management.",
+      "technologies": ["Vue.js", "Django", "PostgreSQL", "AWS S3", "CloudFront"],
+      "imageUrl": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop"
+    }
+  ],
+  "sampleProjects": [
+    {
+      "id": "proj1",
+      "name": "E-Commerce Platform",
+      "description": "A full-featured e-commerce platform with product management, cart functionality, and payment integration.",
+      "technologies": ["Angular", "Node.js", "MongoDB", "Stripe API", "AWS S3"],
+      "imageUrl": "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
+      "githubUrl": "https://github.com/johndoe/ecommerce-platform",
+      "liveUrl": "https://ecommerce-demo.johndoe.dev"
+    },
+    {
+      "id": "proj2",
+      "name": "Task Management System",
+      "description": "A collaborative task management application with real-time updates and team collaboration features.",
+      "technologies": ["React", "Express", "Socket.io", "PostgreSQL", "Docker"],
+      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop",
+      "githubUrl": "https://github.com/johndoe/task-manager",
+      "liveUrl": null
+    },
+    {
+      "id": "proj3",
+      "name": "Weather Dashboard",
+      "description": "An interactive weather dashboard that displays current weather and forecasts for multiple locations.",
+      "technologies": ["Vue.js", "OpenWeather API", "Chart.js", "Tailwind CSS"],
+      "imageUrl": "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop",
+      "githubUrl": "https://github.com/johndoe/weather-dashboard",
+      "liveUrl": "https://weather.johndoe.dev"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test1",
+      "name": "LinkedIn Recommendation 1",
+      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+    },
+    {
+      "id": "test2",
+      "name": "LinkedIn Recommendation 2",
+      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+    },
+    {
+      "id": "test3",
+      "name": "LinkedIn Recommendation 3",
+      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+    },
+    {
+      "id": "test4",
+      "name": "LinkedIn Recommendation 4",
+      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+    },
+    {
+      "id": "test5",
+      "name": "LinkedIn Recommendation 5",
+      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+    },
+    {
+      "id": "test6",
+      "name": "LinkedIn Recommendation 6",
+      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+    }
+  ],
+  "socialLinks": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/johndoe",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/johndoe",
+      "icon": "github"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://twitter.com/johndoe",
+      "icon": "twitter"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:john.doe@example.com",
+      "icon": "email"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<section class="experience-section" id="experience">
+  <div class="container">
+    <div class="section-header" appScrollAnimation animationType="fade-up">
+      <h2>Experience</h2>
+      <p>Here is a quick summary of my most recent experiences</p>
+    </div>
+    
+    <div class="experience-list">
+      @for (exp of experiences; track exp.id) {
+        <div class="experience-card">
+          <div class="company-logo">
+            <div class="logo-placeholder">
+              <span>{{ exp.company.substring(0, 2).toUpperCase() }}</span>
+            </div>
+          </div>
+          
+          <div class="experience-details">
+            <h3 class="position">{{ exp.position }}</h3>
+            <ul class="responsibilities">
+              @for (resp of exp.responsibilities; track $index) {
+                <li>{{ resp }}</li>
+              }
+            </ul>
+          </div>
+          
+          <div class="experience-meta">
+            <div class="date-range">
+              <span>{{ exp.startDate }}</span>
+              <span> - </span>
+              <span>{{ exp.current ? 'Present' : exp.endDate }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

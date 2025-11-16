@@ -1,0 +1,155 @@
+.experience-section {
+  padding: 6rem 0;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+    }
+  }
+
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .experience-card {
+    display: grid;
+    grid-template-columns: 120px 1fr 200px;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--card-light);
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    :host-context(body.dark) & {
+      background: var(--card-dark);
+      border-color: var(--border-dark);
+
+      &:hover {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .company-logo {
+      display: flex;
+      align-items: flex-start;
+
+      .logo-placeholder {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: white;
+      }
+    }
+
+    .experience-details {
+      .position {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-light);
+
+        :host-context(body.dark) & {
+          color: var(--text-dark);
+        }
+      }
+
+      .responsibilities {
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin: 0;
+
+        li {
+          margin-bottom: 0.5rem;
+          font-size: 1rem;
+          line-height: 1.6;
+          color: #666;
+
+          :host-context(body.dark) & {
+            color: #a1a1aa;
+          }
+        }
+      }
+    }
+
+    .experience-meta {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+
+      .date-range {
+        font-size: 1rem;
+        color: #666;
+        text-align: right;
+
+        :host-context(body.dark) & {
+          color: #a1a1aa;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 968px) {
+    padding: 4rem 0;
+
+    .experience-card {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+
+      .company-logo {
+        justify-content: center;
+      }
+
+      .experience-meta {
+        justify-content: flex-start;
+
+        .date-range {
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .experience-card {
+      padding: 1.5rem;
+
+      .company-logo .logo-placeholder {
+        width: 80px;
+        height: 80px;
+        font-size: 1.5rem;
+      }
+
+      .experience-details .position {
+        font-size: 1.125rem;
+      }
+    }
+  }
+}

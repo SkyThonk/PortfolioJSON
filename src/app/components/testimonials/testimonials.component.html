@@ -1,0 +1,53 @@
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <div class="section-header" appScrollAnimation animationType="fade-up">
+      <h2>Testimonials</h2>
+      <p>What clients and colleagues say</p>
+    </div>
+
+    <div class="testimonials-carousel">
+      <button 
+        class="carousel-btn prev" 
+        (click)="prev()" 
+        [disabled]="testimonials.length <= 3"
+        aria-label="Previous testimonials">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="testimonials-wrapper">
+        <div class="testimonials-track">
+          @for (testimonial of getVisibleTestimonials(); track testimonial.id) {
+            <div class="testimonial-card">
+              <img [src]="testimonial.imageUrl" [alt]="testimonial.name">
+            </div>
+          }
+        </div>
+      </div>
+
+      <button 
+        class="carousel-btn next" 
+        (click)="next()"
+        [disabled]="testimonials.length <= 3"
+        aria-label="Next testimonials">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <div class="carousel-indicators">
+      @for (item of testimonials; track item.id; let i = $index) {
+        @if (i <= testimonials.length - 3) {
+          <button 
+            class="indicator" 
+            [class.active]="i === currentIndex"
+            (click)="currentIndex = i"
+            [attr.aria-label]="'Go to testimonial ' + (i + 1)">
+          </button>
+        }
+      }
+    </div>
+  </div>
+</section>

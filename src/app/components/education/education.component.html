@@ -1,0 +1,33 @@
+<section class="education-section" id="education">
+  <div class="container">
+    <div class="section-header" appScrollAnimation animationType="fade-up">
+      <h2>Education</h2>
+      <p>My educational background</p>
+    </div>
+    
+    <div class="education-list">
+      @for (edu of education; track edu.id) {
+        <div class="education-card">
+          <div class="education-icon">
+            <div class="icon-placeholder">
+              <span>🎓</span>
+            </div>
+          </div>
+          
+          <div class="education-details">
+            <h3 class="degree">{{ edu.degree }} in {{ edu.field }}</h3>
+            <p class="institution">{{ edu.institution }}</p>
+          </div>
+          
+          <div class="education-meta">
+            <div class="date-range">
+              <span>{{ edu.startDate }}</span>
+              <span> - </span>
+              <span>{{ edu.endDate }}</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

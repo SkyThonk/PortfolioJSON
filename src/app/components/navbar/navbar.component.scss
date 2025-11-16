@@ -1,0 +1,133 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--background-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+
+  :host-context(body.dark) & {
+    background: var(--background-dark);
+    border-bottom-color: var(--border-dark);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: var(--text-light);
+
+    :host-context(body.dark) & {
+      color: var(--text-dark);
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-light);
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--accent-light);
+      }
+
+      :host-context(body.dark) & {
+        color: var(--text-dark);
+
+        &:hover {
+          color: var(--accent-dark);
+        }
+      }
+    }
+
+    .theme-toggle {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--text-light);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background: var(--card-light);
+      }
+
+      :host-context(body.dark) & {
+        color: var(--text-dark);
+
+        &:hover {
+          background: var(--card-dark);
+        }
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .theme-divider {
+      color: var(--border-light);
+      font-weight: 300;
+
+      :host-context(body.dark) & {
+        color: var(--border-dark);
+      }
+    }
+
+    .download-cv {
+      padding: 0.5rem 1.25rem;
+      background: var(--text-light);
+      color: var(--background-light);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      :host-context(body.dark) & {
+        background: var(--text-dark);
+        color: var(--background-dark);
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      gap: 1rem;
+
+      a {
+        font-size: 0.85rem;
+      }
+
+      .download-cv {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  }
+}
