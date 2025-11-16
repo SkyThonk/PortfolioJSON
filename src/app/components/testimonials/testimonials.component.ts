@@ -13,14 +13,19 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   @Input() testimonials: Testimonial[] = [];
   
   currentIndex = 0;
+  itemsPerView = 3;
   private intervalId?: number;
+  private resizeHandler = () => this.updateItemsPerView();
 
   ngOnInit(): void {
     this.startAutoScroll();
+    this.updateItemsPerView();
+    window.addEventListener('resize', this.resizeHandler);
   }
 
   ngOnDestroy(): void {
     this.stopAutoScroll();
+    window.removeEventListener('resize', this.resizeHandler);
   }
 
   private startAutoScroll(): void {
@@ -36,23 +41,41 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   }
 
   next(): void {
-    if (this.testimonials.length > 3) {
-      this.currentIndex = (this.currentIndex + 1) % (this.testimonials.length - 2);
+    const n = this.testimonials.length;
+    if (n > this.itemsPerView) {
+      const maxStart = n - this.itemsPerView + 1; // number of windows
+      this.currentIndex = (this.currentIndex + 1) % maxStart;
     }
   }
 
   prev(): void {
-    if (this.testimonials.length > 3) {
-      this.currentIndex = this.currentIndex === 0 
-        ? this.testimonials.length - 3 
-        : this.currentIndex - 1;
+    const n = this.testimonials.length;
+    if (n > this.itemsPerView) {
+      const maxStart = n - this.itemsPerView;
+      this.currentIndex = this.currentIndex === 0 ? maxStart : this.currentIndex - 1;
     }
   }
 
   getVisibleTestimonials(): Testimonial[] {
-    if (this.testimonials.length <= 3) {
+    if (this.testimonials.length <= this.itemsPerView) {
       return this.testimonials;
     }
-    return this.testimonials.slice(this.currentIndex, this.currentIndex + 3);
+    return this.testimonials.slice(this.currentIndex, this.currentIndex + this.itemsPerView);
+  }
+
+  private updateItemsPerView(): void {
+    const width = window.innerWidth;
+    if (width <= 768) {
+      this.itemsPerView = 1;
+    } else if (width <= 1024) {
+      this.itemsPerView = 2;
+    } else {
+      this.itemsPerView = 3;
+    }
+    // ensure currentIndex is within bounds after resizing
+    const maxStart = Math.max(0, this.testimonials.length - this.itemsPerView);
+    if (this.currentIndex > maxStart) {
+      this.currentIndex = 0;
+    }
   }
 }

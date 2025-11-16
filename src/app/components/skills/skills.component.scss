@@ -22,6 +22,57 @@
     }
   }
 
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .skill-category {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    
+    :host-context(body.dark) & {
+      background: #1e2028;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      border-color: var(--accent);
+      
+      :host-context(body.dark) & {
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-left: 1rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 24px;
+        background: var(--accent);
+        border-radius: 2px;
+      }
+    }
+  }
+
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));

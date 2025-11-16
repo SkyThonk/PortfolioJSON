@@ -40,6 +40,16 @@ export interface Skill {
   items: string[];
 }
 
+export interface SkillItem {
+  name: string;
+  icon: string;
+}
+
+export interface SkillCategory {
+  category: string;
+  skills: SkillItem[];
+}
+
 export interface Project {
   id: string;
   name: string;
@@ -68,6 +78,7 @@ export interface PortfolioData {
   experiences: Experience[];
   education: Education[];
   skills: Skill[];
+  skillItems: SkillCategory[];
   productionProjects: Project[];
   sampleProjects: Project[];
   testimonials: Testimonial[];

@@ -5,71 +5,20 @@
       <p>The skills, tools and technologies I am really good at</p>
     </div>
     
-    <div class="skills-grid">
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-        <span>JavaScript</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" />
-        <span>TypeScript</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-        <span>React</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js" />
-        <span>Next.js</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
-        <span>Node.js</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" alt="Express" />
-        <span>Express.js</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" alt="Nest.js" />
-        <span>Nest.js</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://www.vectorlogo.zone/logos/socketio/socketio-icon.svg" alt="Socket.io" />
-        <span>Socket.io</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
-        <span>PostgreSQL</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" />
-        <span>MongoDB</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="Sass" />
-        <span>Sass/Scss</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind" />
-        <span>Tailwindcss</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
-        <span>Figma</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="Google Cloud" />
-        <span>Cypress</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg" alt="Storybook" />
-        <span>Storybook</span>
-      </div>
-      <div class="skill-item">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-        <span>Git</span>
-      </div>
+    <div class="skills-container">
+      @for (category of skillItems; track category.category) {
+        <div class="skill-category">
+          <h3 class="category-title">{{ category.category }}</h3>
+          <div class="skills-grid">
+            @for (skill of category.skills; track skill.name) {
+              <div class="skill-item">
+                <img [src]="skill.icon" [alt]="skill.name" />
+                <span>{{ skill.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
     </div>
   </div>
 </section>

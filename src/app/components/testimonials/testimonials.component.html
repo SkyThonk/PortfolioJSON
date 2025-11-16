@@ -9,7 +9,7 @@
       <button 
         class="carousel-btn prev" 
         (click)="prev()" 
-        [disabled]="testimonials.length <= 3"
+        [disabled]="testimonials.length <= itemsPerView"
         aria-label="Previous testimonials">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="15 18 9 12 15 6"></polyline>
@@ -29,7 +29,7 @@
       <button 
         class="carousel-btn next" 
         (click)="next()"
-        [disabled]="testimonials.length <= 3"
+        [disabled]="testimonials.length <= itemsPerView"
         aria-label="Next testimonials">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
           <polyline points="9 18 15 12 9 6"></polyline>
@@ -39,7 +39,7 @@
 
     <div class="carousel-indicators">
       @for (item of testimonials; track item.id; let i = $index) {
-        @if (i <= testimonials.length - 3) {
+        @if (i <= testimonials.length - itemsPerView) {
           <button 
             class="indicator" 
             [class.active]="i === currentIndex"

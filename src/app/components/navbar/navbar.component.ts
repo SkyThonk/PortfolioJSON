@@ -13,6 +13,17 @@ export class NavbarComponent {
   themeService = inject(ThemeService);
   isDarkTheme = this.themeService.isDarkTheme;
 
+  // Mobile drawer state
+  mobileMenuOpen = false;
+
+  toggleMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.mobileMenuOpen = false;
+  }
+
   toggleTheme() {
     this.themeService.toggleTheme();
   }

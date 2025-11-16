@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Skill } from '../../models/portfolio.model';
+import { Skill, SkillCategory } from '../../models/portfolio.model';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
 
 @Component({
@@ -11,4 +11,5 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
 })
 export class SkillsComponent {
   @Input() skills: Skill[] = [];
+  @Input() skillItems: SkillCategory[] = [];
 }

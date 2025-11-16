@@ -53,6 +53,7 @@ export class PortfolioDataService {
       experiences: [],
       education: [],
       skills: [],
+      skillItems: [],
       productionProjects: [],
       sampleProjects: [],
       testimonials: [],

@@ -100,6 +100,133 @@
       "items": ["Agile/Scrum", "Unit Testing", "Jest", "Jasmine", "Problem Solving", "Team Leadership"]
     }
   ],
+  "skillItems": [
+    {
+      "category": "Frontend",
+      "skills": [
+        {
+          "name": "JavaScript",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        },
+        {
+          "name": "TypeScript",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+        },
+        {
+          "name": "React",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+          "name": "Next.js",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+        },
+        {
+          "name": "Angular",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+        },
+        {
+          "name": "Vue.js",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+        }
+      ]
+    },
+    {
+      "category": "Backend",
+      "skills": [
+        {
+          "name": "Node.js",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+        },
+        {
+          "name": "Express.js",
+          "icon": "https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg"
+        },
+        {
+          "name": "Nest.js",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+        },
+        {
+          "name": "Python",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+        },
+        {
+          "name": "Django",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
+        }
+      ]
+    },
+    {
+      "category": "Database",
+      "skills": [
+        {
+          "name": "PostgreSQL",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+        },
+        {
+          "name": "MySQL",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+        },
+        {
+          "name": "Redis",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+        }
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "skills": [
+        {
+          "name": "Git",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+        },
+        {
+          "name": "Docker",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+        },
+        {
+          "name": "AWS",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+        },
+        {
+          "name": "Kubernetes",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"
+        }
+      ]
+    },
+    {
+      "category": "Other",
+      "skills": [
+        {
+          "name": "Sass/Scss",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg"
+        },
+        {
+          "name": "Tailwindcss",
+          "icon": "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
+        },
+        {
+          "name": "Figma",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+        },
+        {
+          "name": "Socket.io",
+          "icon": "https://www.vectorlogo.zone/logos/socketio/socketio-icon.svg"
+        },
+        {
+          "name": "Cypress",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cypressio/cypressio-original.svg"
+        },
+        {
+          "name": "Storybook",
+          "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg"
+        }
+      ]
+    }
+  ],
   "productionProjects": [
     {
       "id": "prod1",
@@ -163,34 +290,34 @@
     {
       "id": "test1",
       "name": "LinkedIn Recommendation 1",
-      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&h=800&fit=crop"
     },
     {
       "id": "test2",
       "name": "LinkedIn Recommendation 2",
-      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop"
     },
     {
       "id": "test3",
       "name": "LinkedIn Recommendation 3",
-      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=800&fit=crop"
     },
     {
       "id": "test4",
       "name": "LinkedIn Recommendation 4",
-      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1545992336-03a23c7d9a5a?w=600&h=800&fit=crop"
     },
     {
       "id": "test5",
       "name": "LinkedIn Recommendation 5",
-      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop"
     },
     {
       "id": "test6",
       "name": "LinkedIn Recommendation 6",
-      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=800&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1488426862026-3ee67a3ec4d5?w=600&h=800&fit=crop"
     }
-  ],
+    ],
   "socialLinks": [
     {
       "platform": "LinkedIn",
