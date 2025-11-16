@@ -305,17 +305,17 @@
     {
       "id": "test4",
       "name": "LinkedIn Recommendation 4",
-      "imageUrl": "https://images.unsplash.com/photo-1545992336-03a23c7d9a5a?w=600&h=800&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&h=800&fit=crop"
     },
     {
       "id": "test5",
       "name": "LinkedIn Recommendation 5",
       "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop"
     },
-    {
+     {
       "id": "test6",
       "name": "LinkedIn Recommendation 6",
-      "imageUrl": "https://images.unsplash.com/photo-1488426862026-3ee67a3ec4d5?w=600&h=800&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop"
     }
     ],
   "socialLinks": [

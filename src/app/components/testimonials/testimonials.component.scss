@@ -126,8 +126,9 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .carousel-btn {
-    display: none;
+  /* Hide next/prev buttons on tablet (to emphasize multiple items); mobile shows them */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .carousel-btn { display: none; }
   }
 }
 

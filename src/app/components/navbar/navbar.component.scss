@@ -116,7 +116,7 @@
     }
 
     .hamburger {
-      display: none;
+      display: none !important;
       background: transparent;
       border: none;
       color: var(--text-light);
@@ -160,7 +160,7 @@
       }
 
       .hamburger {
-        display: flex;
+        display: flex !important;
       }
     }
   }

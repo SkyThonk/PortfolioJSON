@@ -5,7 +5,13 @@
   <title>Portfolio</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Use project logo as favicon (SVG) - fallback to classic ICO if needed -->
+  <!-- SVG favicon (add cache-busting query to ensure browsers fetch the new icon) -->
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=2">
+  <!-- Inline data-favicon as a reliable fallback without network request (helps in dev) -->
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%2316181d'/><text x='50%' y='50%' font-family='Courier New' font-size='24' text-anchor='middle' dominant-baseline='middle' fill='%2360a5fa'>&lt;/&gt;</text></svg>">
+  <!-- Keep a fallback for older browsers that don't support SVG favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png?v=2">
 </head>
 <body>
   <app-root></app-root>

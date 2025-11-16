@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Testimonial } from '../../models/portfolio.model';
 import { ScrollAnimationDirective } from '../../directives/scroll-animation.directive';
@@ -17,9 +17,12 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   private intervalId?: number;
   private resizeHandler = () => this.updateItemsPerView();
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   ngOnInit(): void {
-    this.startAutoScroll();
+    // Setup items per view first, then start auto-scroll
     this.updateItemsPerView();
+    this.startAutoScroll();
     window.addEventListener('resize', this.resizeHandler);
   }
 
@@ -29,38 +32,59 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   }
 
   private startAutoScroll(): void {
+    // Auto-scroll every 5 seconds
+    if (this.intervalId) return;
     this.intervalId = window.setInterval(() => {
       this.next();
-    }, 3000); // Change every 3 seconds
+      // ensure UI refresh in edge cases
+      this.cdr.detectChanges();
+    }, 5000);
   }
 
   private stopAutoScroll(): void {
     if (this.intervalId) {
       clearInterval(this.intervalId);
+      this.intervalId = undefined;
     }
+  }
+
+  // Public helpers to allow template to pause/resume scrolling
+  pauseAutoScroll(): void {
+    this.stopAutoScroll();
+  }
+
+  resumeAutoScroll(): void {
+    this.startAutoScroll();
   }
 
   next(): void {
     const n = this.testimonials.length;
     if (n > this.itemsPerView) {
-      const maxStart = n - this.itemsPerView + 1; // number of windows
-      this.currentIndex = (this.currentIndex + 1) % maxStart;
+      const maxStartIdx = n - this.itemsPerView; // highest valid start index
+      const numPositions = maxStartIdx + 1; // total possible windows
+      this.currentIndex = (this.currentIndex + 1) % numPositions;
+      this.cdr.detectChanges();
     }
   }
 
   prev(): void {
     const n = this.testimonials.length;
     if (n > this.itemsPerView) {
-      const maxStart = n - this.itemsPerView;
-      this.currentIndex = this.currentIndex === 0 ? maxStart : this.currentIndex - 1;
+      const maxStartIdx = n - this.itemsPerView;
+      const numPositions = maxStartIdx + 1;
+      this.currentIndex = this.currentIndex === 0 ? numPositions - 1 : this.currentIndex - 1;
+      this.cdr.detectChanges();
     }
   }
 
   getVisibleTestimonials(): Testimonial[] {
-    if (this.testimonials.length <= this.itemsPerView) {
-      return this.testimonials;
-    }
-    return this.testimonials.slice(this.currentIndex, this.currentIndex + this.itemsPerView);
+    const n = this.testimonials.length;
+    if (n <= this.itemsPerView) return this.testimonials;
+
+    // clamp currentIndex to a safe range to avoid blank slices
+    const maxStartIdx = Math.max(0, n - this.itemsPerView);
+    const start = Math.min(Math.max(0, this.currentIndex), maxStartIdx);
+    return this.testimonials.slice(start, start + this.itemsPerView);
   }
 
   private updateItemsPerView(): void {
@@ -73,9 +97,8 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
       this.itemsPerView = 3;
     }
     // ensure currentIndex is within bounds after resizing
-    const maxStart = Math.max(0, this.testimonials.length - this.itemsPerView);
-    if (this.currentIndex > maxStart) {
-      this.currentIndex = 0;
-    }
+    const maxStartIdx = Math.max(0, this.testimonials.length - this.itemsPerView);
+    // clamp index instead of resetting to 0 to prevent occasional blank
+    this.currentIndex = Math.min(this.currentIndex, maxStartIdx);
   }
 }

@@ -16,7 +16,7 @@
         </svg>
       </button>
 
-      <div class="testimonials-wrapper">
+      <div class="testimonials-wrapper" (mouseenter)="pauseAutoScroll()" (mouseleave)="resumeAutoScroll()" (pointerdown)="pauseAutoScroll()" (pointerup)="resumeAutoScroll()">
         <div class="testimonials-track">
           @for (testimonial of getVisibleTestimonials(); track testimonial.id) {
             <div class="testimonial-card">
