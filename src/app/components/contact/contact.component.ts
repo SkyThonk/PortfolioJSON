@@ -26,6 +26,7 @@ export class ContactComponent {
       'LinkedIn': '💼',
       'GitHub': '💻',
       'Twitter': '🐦',
+      'Medium': '✍️',
       'Email': '📧',
       'Facebook': '👤',
       'Instagram': '📷'

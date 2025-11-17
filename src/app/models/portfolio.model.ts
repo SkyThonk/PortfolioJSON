@@ -6,6 +6,7 @@ export interface PersonalInfo {
   location: string;
   linkedin?: string;
   github?: string;
+  medium?: string;
   website?: string;
   /** Availability or short status to show in the hero section, e.g. "Available for new projects" */
   availability?: string;
