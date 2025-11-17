@@ -18,7 +18,8 @@
       <div class="about-content">
         <!-- Left column: portrait / avatar and any visual representation -->
         <div class="about-image" appScrollAnimation animationType="fade-left">
-          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=500&fit=crop" alt="About me" />
+          <!-- Avatar image comes from JSON personalInfo.avatar; the AboutComponent supplies a fallback if missing -->
+          <img [src]="avatarImage" alt="About me" />
         </div>
         <!-- Right column: long-form description and quick facts -->
         <div class="about-text" appScrollAnimation animationType="fade-right">

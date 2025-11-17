@@ -61,36 +61,123 @@
   flex: 1;
   overflow: hidden;
   border-radius: 12px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  background: var(--background);
   padding: 20px;
 }
 
-.testimonials-track {
+  .testimonials-track {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   transition: transform 0.5s ease-in-out;
 }
 
 .testimonial-card {
-  background: var(--background);
+  background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  padding: 28px;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 
-  &:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
+  &:hover { transform: translateY(-6px); }
+
+  .testimonial-quote {
+    position: relative;
+    padding-left: 54px;
   }
 
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
+  .quote-mark {
+    position: absolute;
+    left: 0;
+    top: -6px;
+    font-size: 64px;
+    line-height: 1;
+    color: rgba(0,0,0,0.30);
+    font-family: serif;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin: 0 0 18px 0;
+  }
+
+  .testimonial-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0,0,0,0.04);
+    padding-top: 16px;
+    gap: 12px;
+  }
+
+  .testimonial-meta-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testimonial-photo img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
     object-fit: cover;
+    border: 3px solid var(--background);
   }
+
+  .testimonial-meta-text {
+    .testimonial-name {
+      font-weight: 700;
+      margin: 0;
+    }
+    .testimonial-position,
+    .testimonial-company {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+  }
+
+  .testimonial-meta-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+    min-width: 120px;
+
+    .testimonial-date {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    .testimonial-source {
+      font-size: 0.85rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+  }
+}
+
+/* Dark mode tweaks: increase contrast between card & background, softer shadow */
+body.dark .testimonial-card {
+  box-shadow: 0 10px 30px rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.04);
+}
+
+body.dark .testimonial-card .quote-mark {
+  color: rgba(255,255,255,0.04);
+}
+
+/* If the card blends to the background, make it pop slightly */
+@media (prefers-color-scheme: dark) {
+  .testimonial-card { box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
 }
 
 .carousel-indicators {
@@ -149,5 +236,54 @@
 
   .testimonials-wrapper {
     padding: 15px;
+  }
+
+  /* Mobile-specific tweaks for testimonial card layout */
+  .testimonial-card {
+    padding: 20px;
+
+    .testimonial-quote {
+      padding-left: 44px; /* reduce left padding to fit mobile */
+    }
+
+    .testimonial-footer {
+      /* Stack meta sections vertically on mobile so image sits above name and date */
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding-top: 12px;
+      border-top-width: 1px;
+    }
+
+    .testimonial-meta-left {
+      /* Put the avatar above the name on mobile */
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .testimonial-photo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border-width: 3px;
+    }
+
+    .testimonial-meta-text {
+      text-align: center;
+    }
+
+    .testimonial-meta-right {
+      align-items: center;
+      min-width: auto;
+      text-align: center;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    .testimonial-source {
+      display: inline-block;
+      margin-top: 4px;
+    }
   }
 }

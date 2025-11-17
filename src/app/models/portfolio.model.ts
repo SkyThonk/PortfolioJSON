@@ -9,6 +9,8 @@ export interface PersonalInfo {
   website?: string;
   summary: string;
   avatar?: string;
+  /** Alternate avatar image, prefer this for About section when available. */
+  avatar2?: string;
   /**
    * Simple list of short facts about the person to render in the About section.
    * Example: ["B.E. in Computer Engineering", "Avid learner"]
@@ -84,7 +86,20 @@ export interface SocialLink {
 export interface Testimonial {
   id: string;
   name: string;
-  imageUrl: string;
+  /** Photo or avatar of the person giving the testimonial */
+  imageUrl?: string;
+  /** Role or position of the person */
+  position?: string;
+  /** Company where the testimonial came from */
+  company?: string;
+  /** The testimonial text itself */
+  text?: string;
+  /** Optional link to the source (LinkedIn recommendation, tweet, etc.) */
+  sourceUrl?: string;
+  /** Optional label for the source link (e.g., "Read on LinkedIn"). If omitted, a sensible default is used. */
+  sourceText?: string;
+  /** Date text to show on the card (optional) */
+  date?: string;
 }
 
 export interface PortfolioData {

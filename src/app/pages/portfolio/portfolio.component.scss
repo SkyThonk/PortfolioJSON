@@ -18,8 +18,33 @@
     color: #666;
     margin: 0;
 
+    a {
+      color: var(--accent-light);
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-block; /* allows transform and better hit area */
+      padding: 0 2px;
+      transition: color 120ms ease, transform 120ms ease, text-decoration 120ms ease;
+
+      &:hover,
+      &:focus,
+      &:focus-visible {
+        color: var(--accent-hover, #2469d9);
+        text-decoration: underline;
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
     :host-context(body.dark) & {
       color: #a1a1aa;
+      a {
+        color: var(--accent-dark);
+      }
     }
   }
 }

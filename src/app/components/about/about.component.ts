@@ -42,4 +42,17 @@ export class AboutComponent {
   get aboutParagraphs(): string[] {
     return this.personalInfo?.about ?? [];
   }
+
+  /**
+   * Return the avatar image URL from json or provide a safe fallback.
+   * This keeps the About image consistent with the rest of the app which uses `personalInfo.avatar`.
+   */
+  get avatarImage(): string {
+    // Prefer avatar2 if present; fallback to avatar, then to a generated initials avatar
+    return (
+      this.personalInfo?.avatar2 ||
+      this.personalInfo?.avatar ||
+      'https://ui-avatars.com/api/?name=John+Doe&size=200&background=667eea&color=fff&bold=true'
+    );
+  }
 }

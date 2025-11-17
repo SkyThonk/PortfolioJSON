@@ -28,7 +28,37 @@
         <div class="testimonials-track">
           @for (testimonial of getVisibleTestimonials(); track testimonial.id) {
             <div class="testimonial-card">
-              <img [src]="testimonial.imageUrl" [alt]="testimonial.name">
+              <!-- Quote + body -->
+              <div class="testimonial-quote">
+                <span class="quote-mark">“</span>
+                <p class="testimonial-text">{{ testimonial.text }}</p>
+              </div>
+
+              <!-- Footer: avatar, name & meta (left), date (right) -->
+              <div class="testimonial-footer">
+                <div class="testimonial-meta-left">
+                  <div class="testimonial-photo">
+                    <img [src]="testimonial.imageUrl" [alt]="testimonial.name" />
+                  </div>
+                  <div class="testimonial-meta-text">
+                    <h4 class="testimonial-name">{{ testimonial.name }}</h4>
+                    <div class="testimonial-position">{{ testimonial.position }}</div>
+                    <div class="testimonial-company">{{ testimonial.company }}</div>
+                  </div>
+                </div>
+
+                <div class="testimonial-meta-right">
+                  <div class="testimonial-date">{{ testimonial.date }}</div>
+                  @if (testimonial.sourceUrl) {
+                    <a
+                      class="testimonial-source"
+                      [href]="testimonial.sourceUrl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >{{ testimonial.sourceText || 'Read on LinkedIn' }}</a>
+                  }
+                </div>
+              </div>
             </div>
           }
         </div>

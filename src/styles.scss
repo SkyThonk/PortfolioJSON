@@ -11,6 +11,13 @@
   --border-dark: #2a2d35;
   --accent-dark: #60a5fa;
   --section-label: #71717a;
+  /* Map generic variables to the light theme defaults. Components use generic names like --card and --text */
+  --background: var(--background-light);
+  --card: var(--card-light);
+  --text: var(--text-light);
+  --border: var(--border-light);
+  --accent: var(--accent-light);
+  --text-secondary: #6b7280; /* gray-500 for light mode */
 }
 
 * {
@@ -120,6 +127,13 @@ body {
 body.dark {
   background-color: var(--background-dark);
   color: var(--text-dark);
+  /* Map in dark theme — components use generic variables so change them here */
+  --background: var(--background-dark);
+  --card: var(--card-dark);
+  --text: var(--text-dark);
+  --border: var(--border-dark);
+  --accent: var(--accent-dark);
+  --text-secondary: #a1a1aa; /* slightly lighter gray for dark mode */
 }
 
 h1, h2, h3, h4, h5, h6 {

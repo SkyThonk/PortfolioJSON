@@ -18,9 +18,11 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   @Input() testimonials: Testimonial[] = [];
   
   currentIndex = 0;
-  itemsPerView = 3;
+  // Show 2 testimonials side-by-side on non-mobile screens; 1 on mobile
+  itemsPerView = 2;
   private intervalId?: number;
   private resizeHandler = () => this.updateItemsPerView();
+  private mediaQuery?: MediaQueryList;
 
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -29,11 +31,25 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
     this.updateItemsPerView();
     this.startAutoScroll();
     window.addEventListener('resize', this.resizeHandler);
+    // Listen for breakpoint changes (use matchMedia so switching to mobile view updates immediately)
+    try {
+      this.mediaQuery = window.matchMedia('(max-width: 768px)');
+      // update immediately when the media query's value changes
+      this.mediaQuery.addEventListener?.('change', this.resizeHandler);
+      // Some older browsers use addListener
+      this.mediaQuery.addListener?.(this.resizeHandler as any);
+    } catch (e) {
+      // ignore if matchMedia isn't available in the environment
+    }
   }
 
   ngOnDestroy(): void {
     this.stopAutoScroll();
     window.removeEventListener('resize', this.resizeHandler);
+    if (this.mediaQuery) {
+      this.mediaQuery.removeEventListener?.('change', this.resizeHandler);
+      this.mediaQuery.removeListener?.(this.resizeHandler as any);
+    }
   }
 
   /** Start automatic scrolling of testimonials every 5 seconds. */
@@ -102,6 +118,13 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
   }
 
   /**
+   * Return a safe text for testimonial to avoid empty displays.
+   */
+  getTestimonialText(t: Testimonial): string {
+    return t.text ?? '';
+  }
+
+  /**
    * Update the itemsPerView value based on window width.
    * - mobile: 1, tablet/smaller desktop: 2, large screens: 3
    */
@@ -109,14 +132,16 @@ export class TestimonialsComponent implements OnInit, OnDestroy {
     const width = window.innerWidth;
     if (width <= 768) {
       this.itemsPerView = 1;
-    } else if (width <= 1024) {
-      this.itemsPerView = 2;
     } else {
-      this.itemsPerView = 3;
+      this.itemsPerView = 2;
     }
     // ensure currentIndex is within bounds after resizing
     const maxStartIdx = Math.max(0, this.testimonials.length - this.itemsPerView);
     // clamp index instead of resetting to 0 to prevent occasional blank
     this.currentIndex = Math.min(this.currentIndex, maxStartIdx);
+    // force change detection to update the visible slice immediately when resizing
+    // This prevents the temporary state where the CSS is responsive but the component still
+    // renders an outdated number of items until the next user/action triggers change detection.
+    this.cdr.detectChanges();
   }
 }

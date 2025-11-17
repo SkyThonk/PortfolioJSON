@@ -11,6 +11,8 @@
     "summary": "Passionate Full Stack Developer with 5+ years of experience building scalable web applications. Specialized in Angular, React, Node.js, and cloud technologies. Strong problem-solver with a track record of delivering high-quality solutions.",
     "avatar": "https://ui-avatars.com/api/?name=John+Doe&size=200&background=667eea&color=fff&bold=true"
     ,
+    "avatar2": "https://ui-avatars.com/api/?name=Tohn+Doe&size=200&background=667eea&color=fff&bold=true"
+    ,
     "about": [
       "I'm a passionate, self-proclaimed designer who specializes in full stack development (React.js & Node.js). I am very enthusiastic about bringing the technical and visual aspects of digital products to life. User experience, pixel perfect design, and writing clear, readable, highly performant code matters to me.",
       "I began my journey as a web developer in 2015, and since then, I've continued to grow and evolve as a developer, taking on new challenges and learning the latest technologies along the way. Now, in my early thirties, 7 years after starting my web development journey, I'm building cutting-edge web applications using modern technologies such as Next.js, TypeScript, Nestjs, Tailwindcss, Supabase and much more.",
@@ -321,33 +323,81 @@
   "testimonials": [
     {
       "id": "test1",
-      "name": "LinkedIn Recommendation 1",
-      "imageUrl": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&h=800&fit=crop"
+      "name": "Jane Smith",
+      "imageUrl": "https://ui-avatars.com/api/?name=Jane+Smith&size=200&background=667eea&color=fff&bold=true",
+      "position": "Product Manager",
+      "company": "Acme Co",
+      "text": "John consistently delivered high-quality work; his attention to detail and communication skills ensured our project launched on time. ",
+      "sourceUrl": "https://www.linkedin.com/recommendation/test1"
+      ,
+      "sourceText": "Read on LinkedIn"
+      ,
+      "date": "January 29, 2021"
     },
     {
       "id": "test2",
-      "name": "LinkedIn Recommendation 2",
-      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop"
+      "name": "Sam Patel",
+      "imageUrl": "https://ui-avatars.com/api/?name=Sam+Patel&size=200&background=5555ff&color=fff&bold=true",
+      "position": "CTO",
+      "company": "TechCorp",
+      "text": "An excellent engineer who took ownership of our critical features and worked well with cross-functional teams.",
+      "sourceUrl": "https://www.linkedin.com/recommendation/test2"
+      ,
+      "sourceText": "Read on LinkedIn"
+      ,
+      "date": "February 12, 2022"
     },
     {
       "id": "test3",
-      "name": "LinkedIn Recommendation 3",
-      "imageUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=800&fit=crop"
+      "name": "Lisa Chen",
+      "imageUrl": "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=800&fit=crop",
+      "position": "Design Lead",
+      "company": "Bright Designs",
+      "text": "John's design-synced engineering made integrations easier and improved our release velocity.",
+      "sourceUrl": "https://www.linkedin.com/recommendation/test3"
+      ,
+      "sourceText": "Read on LinkedIn"
+      ,
+      "date": "March 5, 2022"
     },
     {
       "id": "test4",
-      "name": "LinkedIn Recommendation 4",
-      "imageUrl": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&h=800&fit=crop"
+      "name": "Carlos Diaz",
+      "imageUrl": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=600&h=800&fit=crop",
+      "position": "Founder",
+      "company": "StartupHub",
+      "text": "Delivered real results during our growth phase — strong problem-solving and great collaboration.",
+      "sourceUrl": "https://www.linkedin.com/recommendation/test4"
+      ,
+      "sourceText": "Read on LinkedIn"
+      ,
+      "date": "May 14, 2020"
     },
     {
       "id": "test5",
-      "name": "LinkedIn Recommendation 5",
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop"
+      "name": "Eun-ji Park",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop",
+      "position": "Engineering Manager",
+      "company": "Scale Labs",
+      "text": "Great to work with — always delivered pragmatic, well-tested solutions.",
+      "sourceUrl": "https://www.linkedin.com/recommendation/test5"
+      ,
+      "sourceText": "Read on LinkedIn"
+      ,
+      "date": "June 10, 2019"
     },
     {
       "id": "test6",
-      "name": "LinkedIn Recommendation 6",
-      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop"
+      "name": "Marcus Lee",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop",
+      "position": "Product Owner",
+      "company": "Retailly",
+      "text": "Quick to iterate and adapt — an effective collaborator in dynamic environments.",
+      "sourceUrl": "https://www.linkedin.com/recommendation/test6"
+      ,
+      "sourceText": "Read on LinkedIn"
+      ,
+      "date": "August 2, 2021"
     }
     ],
   "socialLinks": [
