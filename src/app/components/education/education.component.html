@@ -21,7 +21,7 @@
           </div>
           
           <div class="education-details">
-            <h3 class="degree">{{ edu.degree }} in {{ edu.field }}</h3>
+            <h3 class="degree">{{ edu.degree }} <span *ngIf="edu.field != null && edu.field.length > 0">in {{ edu.field }}</span></h3>
             <p class="institution">{{ edu.institution }}</p>
           </div>
           
