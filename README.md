@@ -373,7 +373,7 @@ Then open `http://localhost:8000` in your browser.
 
 3. **Build your project**
    ```bash
-   npm run build
+   ng build --configuration production
    ```
 
 4. **Deploy to Firebase**
