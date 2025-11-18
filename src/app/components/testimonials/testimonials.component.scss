@@ -230,60 +230,115 @@ body.dark .testimonial-card .quote-mark {
     }
   }
 
-  .testimonials-track {
-    grid-template-columns: 1fr;
+  /* Hide carousel buttons on mobile - use swipe instead */
+  .carousel-btn {
+    display: none;
+  }
+
+  .testimonials-carousel {
+    gap: 0;
   }
 
   .testimonials-wrapper {
-    padding: 15px;
+    padding: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .testimonials-track {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 100%;
   }
 
   /* Mobile-specific tweaks for testimonial card layout */
   .testimonial-card {
     padding: 20px;
+    scroll-snap-align: center;
+    min-height: auto;
+    margin: 0 10px;
 
     .testimonial-quote {
-      padding-left: 44px; /* reduce left padding to fit mobile */
+      padding-left: 0;
+      margin-bottom: 16px;
+    }
+
+    .quote-mark {
+      position: relative;
+      display: block;
+      left: 0;
+      top: 0;
+      font-size: 48px;
+      margin-bottom: 8px;
+      opacity: 0.15;
+    }
+
+    .testimonial-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin: 0;
     }
 
     .testimonial-footer {
-      /* Stack meta sections vertically on mobile so image sits above name and date */
+      /* Stack meta sections vertically on mobile */
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      padding-top: 12px;
+      align-items: flex-start;
+      gap: 12px;
+      padding-top: 16px;
       border-top-width: 1px;
     }
 
     .testimonial-meta-left {
-      /* Put the avatar above the name on mobile */
-      flex-direction: column;
+      /* Keep avatar and text side by side on mobile */
+      flex-direction: row;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
+      width: 100%;
     }
 
     .testimonial-photo img {
-      width: 72px;
-      height: 72px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      border-width: 3px;
+      border-width: 2px;
     }
 
     .testimonial-meta-text {
-      text-align: center;
+      text-align: left;
+      flex: 1;
+      
+      .testimonial-name {
+        font-size: 0.95rem;
+        margin-bottom: 2px;
+      }
+      
+      .testimonial-position,
+      .testimonial-company {
+        font-size: 0.8rem;
+      }
     }
 
     .testimonial-meta-right {
-      align-items: center;
+      align-items: flex-start;
       min-width: auto;
-      text-align: center;
+      text-align: left;
       width: 100%;
-      margin-top: 4px;
-    }
-
-    .testimonial-source {
-      display: inline-block;
-      margin-top: 4px;
+      margin-top: 0;
+      
+      .testimonial-date {
+        font-size: 0.8rem;
+      }
+      
+      .testimonial-source {
+        font-size: 0.82rem;
+      }
     }
   }
 }
