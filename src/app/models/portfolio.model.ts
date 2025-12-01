@@ -68,16 +68,23 @@ export interface SkillCategory {
 export interface Project {
   id: string;
   name: string;
+  /** Short subtitle or tagline for the project */
+  subtitle?: string;
   description: string;
+  /** Type of project: 'production' for real-world deployed projects, 'side-project' for demos/samples */
+  type?: 'production' | 'side-project';
+  /** Whether this project should be prominently featured */
+  featured?: boolean;
   technologies: string[];
   /**
    * Optional list of images for a project.
-   * If present and has more than one image, the UI will cycle through these images every second.
+   * If present and has more than one image, the UI will cycle through these images.
    */
   imageUrls?: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  highlights: string[];
+  githubUrl?: string | null;
+  liveUrl?: string | null;
+  /** Key highlights or achievements for this project */
+  highlights?: string[];
 }
 
 export interface SocialLink {
@@ -111,8 +118,8 @@ export interface PortfolioData {
   education: Education[];
   skills: Skill[];
   skillItems: SkillCategory[];
-  productionProjects: Project[];
-  sampleProjects: Project[];
+  /** Combined list of all projects (production and side projects) */
+  projects: Project[];
   testimonials: Testimonial[];
   socialLinks: SocialLink[];
 }

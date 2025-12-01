@@ -56,8 +56,7 @@ export class PortfolioDataService {
       education: [],
       skills: [],
       skillItems: [],
-      productionProjects: [],
-      sampleProjects: [],
+      projects: [],
       testimonials: [],
       socialLinks: []
     };

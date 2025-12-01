@@ -11,15 +11,18 @@ import { ScrollAnimationDirective } from '../../directives/scroll-animation.dire
 })
 export class ProjectsComponent implements OnChanges, OnDestroy {
   /**
-   * Projects that are production-ready, often with live links.
-   * Expect Project.id, Project.name, Project.description, Project.technologies, etc.
+   * Combined list of all projects (production and side projects)
    */
-  @Input() productionProjects: Project[] = [];
+  @Input() projects: Project[] = [];
 
-  /**
-   * Sample or demo projects to show experiments or prototypes.
-   */
-  @Input() sampleProjects: Project[] = [];
+  // Featured projects to display prominently
+  featuredProjects: Project[] = [];
+  
+  // Other projects
+  otherProjects: Project[] = [];
+
+  // Active image index for each project (for carousel)
+  activeImageIndex: { [projectId: string]: number } = {};
 
   // Holds the current index for rotating images per project id
   private currentImageIndex: { [projectId: string]: number } = {};
@@ -33,23 +36,27 @@ export class ProjectsComponent implements OnChanges, OnDestroy {
     // Reset and reinitialize timers when input projects change.
     this.clearAllTimers();
 
-    const allProjects = [...(this.productionProjects || []), ...(this.sampleProjects || [])];
+    // Get all projects
+    const allProjects = this.projects || [];
+
+    // Separate featured and other projects
+    this.featuredProjects = allProjects.filter(p => p.featured !== false);
+    this.otherProjects = allProjects.filter(p => p.featured === false);
+
     for (const project of allProjects) {
       const images = project.imageUrls && project.imageUrls.length ? project.imageUrls : [];
+      this.currentImageIndex[project.id] = 0;
+      this.activeImageIndex[project.id] = 0;
+      
       if (images.length > 1) {
-        // initialize index
-        this.currentImageIndex[project.id] = 0;
-        // start rotation timer for this project
+        // start rotation timer for this project (slower rotation - 4 seconds)
         const timerId = window.setInterval(() => {
           const idx = (this.currentImageIndex[project.id] + 1) % images.length;
           this.currentImageIndex[project.id] = idx;
-          // trigger a change detection so Angular updates the template
+          this.activeImageIndex[project.id] = idx;
           this.cdr.detectChanges();
-        }, 1500);
+        }, 4000);
         this.rotationTimers.set(project.id, timerId);
-      } else {
-        // ensure index is 0 for single-image projects
-        this.currentImageIndex[project.id] = 0;
       }
     }
   }
@@ -63,6 +70,7 @@ export class ProjectsComponent implements OnChanges, OnDestroy {
     this.rotationTimers.forEach((timer) => clearInterval(timer));
     this.rotationTimers.clear();
     this.currentImageIndex = {};
+    this.activeImageIndex = {};
   }
 
   /**
@@ -74,4 +82,32 @@ export class ProjectsComponent implements OnChanges, OnDestroy {
     return images[idx];
   }
 
+  /**
+   * Get all images for a project
+   */
+  getProjectImages(project: Project): string[] {
+    return project.imageUrls || [];
+  }
+
+  /**
+   * Set active image for a project (for manual navigation)
+   */
+  setActiveImage(project: Project, index: number): void {
+    this.currentImageIndex[project.id] = index;
+    this.activeImageIndex[project.id] = index;
+  }
+
+  /**
+   * Get display label for project type
+   */
+  getProjectTypeLabel(project: Project): string {
+    return project.type === 'production' ? 'Production' : 'Side Project';
+  }
+
+  /**
+   * Check if project has multiple images
+   */
+  hasMultipleImages(project: Project): boolean {
+    return (project.imageUrls?.length || 0) > 1;
+  }
 }

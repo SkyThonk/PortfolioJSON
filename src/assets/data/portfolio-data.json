@@ -245,54 +245,105 @@
       ]
     }
   ],
-  "productionProjects": [
+  "projects": [
     {
       "id": "prod1",
       "name": "Enterprise CRM System",
+      "subtitle": "Customer Relationship Management",
+      "type": "production",
+      "featured": true,
       "description": "A comprehensive customer relationship management system for large enterprises with advanced analytics, lead tracking, and sales pipeline management.",
+      "highlights": [
+        "Advanced analytics dashboard",
+        "Lead tracking & scoring",
+        "Sales pipeline management",
+        "Enterprise-grade security"
+      ],
       "technologies": ["Angular", "Node.js", "PostgreSQL", "Redis", "AWS"],
       "imageUrls": [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
-      ]
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop"
+      ],
+      "githubUrl": null,
+      "liveUrl": null
     },
     {
       "id": "prod2",
       "name": "Healthcare Management Portal",
+      "subtitle": "HIPAA-Compliant Platform",
+      "type": "production",
+      "featured": true,
       "description": "HIPAA-compliant healthcare management platform with patient records, appointment scheduling, and telemedicine capabilities.",
+      "highlights": [
+        "HIPAA compliance built-in",
+        "Patient records management",
+        "Telemedicine integration",
+        "Appointment scheduling"
+      ],
       "technologies": ["React", "Express", "MongoDB", "Socket.io", "Azure"],
       "imageUrls": [
-        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
-      ]
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=500&fit=crop"
+      ],
+      "githubUrl": null,
+      "liveUrl": null
     },
     {
       "id": "prod3",
       "name": "Financial Trading Platform",
+      "subtitle": "Real-time Stock Trading",
+      "type": "production",
+      "featured": true,
       "description": "Real-time stock trading platform with live market data, portfolio management, and advanced charting tools for institutional investors.",
+      "highlights": [
+        "Real-time market data",
+        "Advanced charting tools",
+        "Portfolio management",
+        "Institutional-grade features"
+      ],
       "technologies": ["Next.js", "NestJS", "TimescaleDB", "WebSocket", "Docker"],
       "imageUrls": [
-        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop"
-      ]
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=500&fit=crop"
+      ],
+      "githubUrl": null,
+      "liveUrl": null
     },
     {
       "id": "prod4",
       "name": "E-Learning Management System",
+      "subtitle": "Online Education Platform",
+      "type": "production",
+      "featured": true,
       "description": "Comprehensive learning management system with video streaming, interactive quizzes, progress tracking, and certification management.",
+      "highlights": [
+        "Video streaming support",
+        "Interactive quizzes",
+        "Progress tracking",
+        "Certification management"
+      ],
       "technologies": ["Vue.js", "Django", "PostgreSQL", "AWS S3", "CloudFront"],
       "imageUrls": [
-        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop"
-      ]
-    }
-  ],
-  "sampleProjects": [
+        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=500&fit=crop"
+      ],
+      "githubUrl": null,
+      "liveUrl": null
+    },
     {
       "id": "proj1",
       "name": "E-Commerce Platform",
+      "subtitle": "Full-Stack Shopping Solution",
+      "type": "side-project",
+      "featured": false,
       "description": "A full-featured e-commerce platform with product management, cart functionality, and payment integration.",
+      "highlights": [
+        "Product catalog management",
+        "Shopping cart & checkout",
+        "Stripe payment integration",
+        "AWS S3 media storage"
+      ],
       "technologies": ["Angular", "Node.js", "MongoDB", "Stripe API", "AWS S3"],
       "imageUrls": [
-        "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=600&h=400&fit=crop"
+        "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=500&fit=crop"
       ],
       "githubUrl": "https://github.com/johndoe/ecommerce-platform",
       "liveUrl": "https://ecommerce-demo.johndoe.dev"
@@ -300,10 +351,19 @@
     {
       "id": "proj2",
       "name": "Task Management System",
+      "subtitle": "Team Collaboration Tool",
+      "type": "side-project",
+      "featured": false,
       "description": "A collaborative task management application with real-time updates and team collaboration features.",
+      "highlights": [
+        "Real-time updates",
+        "Team collaboration",
+        "Drag & drop interface",
+        "Docker deployment"
+      ],
       "technologies": ["React", "Express", "Socket.io", "PostgreSQL", "Docker"],
       "imageUrls": [
-        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&h=400&fit=crop"
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=500&fit=crop"
       ],
       "githubUrl": "https://github.com/johndoe/task-manager",
       "liveUrl": null
@@ -311,11 +371,20 @@
     {
       "id": "proj3",
       "name": "Weather Dashboard",
+      "subtitle": "Interactive Forecast App",
+      "type": "side-project",
+      "featured": false,
       "description": "An interactive weather dashboard that displays current weather and forecasts for multiple locations.",
+      "highlights": [
+        "Multi-location support",
+        "7-day forecasts",
+        "Interactive charts",
+        "Responsive design"
+      ],
       "technologies": ["Vue.js", "OpenWeather API", "Chart.js", "Tailwind CSS"],
       "imageUrls": [
-        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=600&h=400&fit=crop",
-        "https://images.unsplash.com/photo-1505765052569-4d2fff2a0b33?w=600&h=400&fit=crop"
+        "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=500&fit=crop",
+        "https://images.unsplash.com/photo-1505765052569-4d2fff2a0b33?w=800&h=500&fit=crop"
       ],
       "githubUrl": "https://github.com/johndoe/weather-dashboard",
       "liveUrl": "https://weather.johndoe.dev"
